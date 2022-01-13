@@ -27,6 +27,5 @@ INNER JOIN film_actor ON film.film_id = film_actor.film_id
 INNER JOIN actor ON film_actor.actor_id = actor.actor_id
 WHERE  actor.first_name = 'CHRISTIAN'
 AND actor.last_name = 'GABLE'
-GROUP BY actor.actor_id
 ```
 ***
