@@ -435,7 +435,7 @@ insert into employee_bonus(id, id_employee, id_bonus, bonus_number, bonus_date, 
 insert into employee_bonus(id, id_employee, id_bonus, bonus_number, bonus_date, total_bonus_money) values(2, 2, 1, 2,'2000-01-11, 2000-01-15', 140000);
 insert into employee_bonus(id, id_employee, id_bonus, bonus_number, bonus_date, total_bonus_money) values(3, 3, 2, 1, '2021-01-01', 500000);
 insert into employee_bonus(id, id_employee, id_bonus, bonus_number, bonus_date, total_bonus_money) values(4, 4, 3, 1,'2000-01-01', 100000);
-insert into employee_bonus(id, id_employee, id_bonus, bonus_number, bonus_date, total_bonus_money) values(5, 5, , , ,'');
+insert into employee_bonus(id, id_employee, id_bonus, bonus_number, bonus_date, total_bonus_money) values(5, 5, , ,'',  );
 ```
 
 **6.Thêm data bảng nhân viên_lương phạt**
