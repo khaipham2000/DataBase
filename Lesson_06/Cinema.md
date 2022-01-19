@@ -589,16 +589,16 @@ insert into discount (id, discount) values(1, 5%);
 insert into discount (id, discount) values(2, 10%);
 insert into discount (id, discount) values(3, 15%);
 insert into discount (id, discount) values(4, 20%);
-insert into discount (id, discount) values(5, 0%);
+insert into discount (id, discount) values(5, 7%);
 ```
 
 **23.Thêm data bảng vé**
 ```sql
-insert into seat (id, id_employee, id_customer, id_film, id_room, id_seat, cinema_address, time_start) values (1, 1, 1, 1, 1, 1, '40601 Melrose Avenue', '5:07 AM');
-insert into seat (id, id_employee, id_customer, id_film, id_room, id_seat, cinema_address, time_start) values (2, 2, 2, 2, 2, 2, '6 Everett Avenue', '10:03 AM');
-insert into seat (id, id_employee, id_customer, id_film, id_room, id_seat, cinema_address, time_start) values (3, 3, 3, 3, 3, 3, '37567 Leroy Parkway', '5:07 PM');
-insert into seat (id, id_employee, id_customer, id_film, id_room, id_seat, cinema_address, time_start) values (4, 4, 4, 4, 4, 4, '426 Logan Road', '1:24 PM');
-insert into seat (id, id_employee, id_customer, id_film, id_room, id_seat, cinema_address, time_start) values (5, 5, 5, 5, 5, 5, '38228 Becker Lane', '12:25 PM');
+insert into ticket (id, id_employee, id_customer, id_film, id_room, id_seat, cinema_address, time_start) values (1, 1, 1, 1, 1, 1, '40601 Melrose Avenue', '5:07 AM');
+insert into ticket (id, id_employee, id_customer, id_film, id_room, id_seat, cinema_address, time_start) values (2, 2, 2, 2, 2, 2, '6 Everett Avenue', '10:03 AM');
+insert into ticket (id, id_employee, id_customer, id_film, id_room, id_seat, cinema_address, time_start) values (3, 3, 3, 3, 3, 3, '37567 Leroy Parkway', '5:07 PM');
+insert into ticket (id, id_employee, id_customer, id_film, id_room, id_seat, cinema_address, time_start) values (4, 4, 4, 4, 4, 4, '426 Logan Road', '1:24 PM');
+insert into ticket (id, id_employee, id_customer, id_film, id_room, id_seat, cinema_address, time_start) values (5, 5, 5, 5, 5, 5, '38228 Becker Lane', '12:25 PM');
 ```
 **24.Thêm data bảng hóa đơn khách hàng**
 ```sql
