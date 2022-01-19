@@ -26,7 +26,7 @@ CREATE TABLE shift(
     shift_type ENUM('Morning', 'Afternoon', 'Night','Full-time'),
     start TIME NOT NULL,
     end TIME NOT NULL, 
-    month TEXT NOT NULL,
+    month ENUM('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'),
     salary_per_day BIGINT NOT NULL
 )
 ```
@@ -102,7 +102,7 @@ CREATE TABLE full_salary(
     id_salary INT NOT NULL,    
     id_employee_bonus INT NOT NULL,
     id_employee_punish INT NOT NULL,
-    month TEXT NOT NULL,
+    month ENUM('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'),
     total_salary BIGINT NOT NULL,
     FOREIGN KEY (id_salary) REFERENCES salary(id),
     FOREIGN KEY (id_employee_punish) REFERENCES employee_punish(id),
