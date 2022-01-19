@@ -7,7 +7,7 @@ CREATE DATABASE Cinema
 **1.Tạo bảng nhân viên**
 ```sql
 CREATE TABLE employee(
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY,
     name TEXT NOT NULL,
     date_of_birth DATE NOT NULL,
     gender ENUM ('Male', 'Female')
@@ -22,7 +22,7 @@ CREATE TABLE employee(
 **2.Tạo bảng ca làm việc**
 ```sql
 CREATE TABLE shift(
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY,
     shift_type ENUM('Morning', 'Afternoon', 'Night','Full-time'),
     start TIME NOT NULL,
     end TIME NOT NULL, 
@@ -35,7 +35,7 @@ CREATE TABLE shift(
 **3.Tạo bảng lương thưởng**
 ```sql
 CREATE TABLE bonus(
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY,
     name TEXT NOT NULL,
     bonus_money BIGINT NOT NULL
 )
@@ -45,7 +45,7 @@ CREATE TABLE bonus(
 **4.Tạo bảng lương phạt**
 ```sql
 CREATE TABLE punish(
-id INT PRIMARY KEY AUTO_INCREMENT,
+id INT PRIMARY KEY,
     name TEXT NOT NULL,
     punish_money BIGINT NOT NULL
 )
@@ -55,7 +55,7 @@ id INT PRIMARY KEY AUTO_INCREMENT,
 **5.Tạo bảng nhân viên_lương thưởng**
 ```sql
 CREATE TABLE employee_bonus(
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY,
     id_employee INT NOT NULL,
     id_bonus INT,
     bonus_number INT,
@@ -70,7 +70,7 @@ CREATE TABLE employee_bonus(
 **6.Tạo bảng nhân viên_lương phạt**
 ```sql
 CREATE TABLE employee_punish(
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY,
     id_employee INT NOT NULL,
     id_punish INT,
     punish_number INT,
@@ -85,7 +85,7 @@ CREATE TABLE employee_punish(
 **7.Tạo bảng lương cơ bản**
 ```sql
 CREATE TABLE salary(
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY,
     id_employee INT NOT NULL,
     id_shift INT NOT NULL,
     shift_number INT NOT NULL,
@@ -114,7 +114,7 @@ CREATE TABLE full_salary(
 **9.Tạo bảng khách hàng**
 ```sql
 CREATE TABLE customer(
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY,
     name TEXT NOT NULL,
     date_of_birth DATE NOT NULL,
     gender ENUM ('Male', 'Female')
@@ -128,7 +128,7 @@ CREATE TABLE customer(
 **10.Tạo bảng nhà sản xuất**
 ```sql
 CREATE TABLE producer(
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY,
     name TEXT NOT NULL,
     address TEXT NOT NULL
 )
@@ -138,7 +138,7 @@ CREATE TABLE producer(
 **11.Tạo bảng diễn viên**
 ```sql
 CREATE TABLE actor(
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY,
     first_name TEXT NOT NULL,
     last_name TEXT NOT NULL,
 )
@@ -148,7 +148,7 @@ CREATE TABLE actor(
 **12.Tạo bảng thể loại**
 ```sql
 CREATE TABLE category(
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY,
     name TEXT NOT NULL,
 )
 ```
@@ -157,7 +157,7 @@ CREATE TABLE category(
 **13.Tạo bảng format**
 ```sql
 CREATE TABLE format(
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY,
     format TEXT NOT NULL
 ```
 ***
@@ -165,7 +165,7 @@ CREATE TABLE format(
 **14.Tạo bảng phim**
 ```sql
 CREATE TABLE film(
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY,
     id_producer INT NOT NULL,
     title TEXT NOT NULL,
     director TEXT NOT NULL,
@@ -182,7 +182,7 @@ CREATE TABLE film(
 **15.Tạo bảng trailer**
 ```sql
 CREATE TABLE trailer(
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY,
     id_film INT NOT NULL,
     video_trailer TEXT NOT NULL,
     FOREIGN KEY (id_film) REFERENCES film(id)
@@ -228,7 +228,7 @@ CREATE TABLE  film_actor(
 **19.Tạo bảng phòng chiếu**
 ```sql
 CREATE TABLE room(
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY,
     name TEXT NOT NULL,
 )
 ```
@@ -237,7 +237,7 @@ CREATE TABLE room(
 **20.Tạo bảng vị trí ghế**
 ```sql
 CREATE TABLE seat(
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY,
     id_room INT NOT NULL,
     seat_number INT NOT NULL,
     seat_row TEXT NOT NULL,
@@ -250,7 +250,7 @@ CREATE TABLE seat(
 **21.Tạo bảng loại vé**
 ```sql
 CREATE TABLE ticket_type(
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY,
     name TEXT NOT NULL,
     price BIGINT NOT NULL
 )
@@ -260,7 +260,7 @@ CREATE TABLE ticket_type(
 **22.Tạo bảng discount**
 ```sql
 CREATE TABLE discount (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY,
     discount FLOAT 
 )
 ```
@@ -269,7 +269,7 @@ CREATE TABLE discount (
 **23.Tạo bảng vé**
 ```sql
 CREATE TABLE ticket (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY,
     id_employee INT NOT NULL,
     id_customer INT NOT NULL,
     id_film INT NOT NULL,
@@ -289,7 +289,7 @@ CREATE TABLE ticket (
 **24.Tạo bảng hóa đơn khách hàng**
 ```sql
 CREATE TABLE ticket_bill (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY,
     date_bill DATE NOT NULL,
     time_bill TIME NOT NULL,
     id_ticket INT NOT NULL,
@@ -308,7 +308,7 @@ CREATE TABLE ticket_bill (
 **25.Tạo bảng nhà cung cấp nguyên liệu**
 ```sql
 CREATE TABLE supplier(
-    id INT PRIMARY KEY AUTO_INCREMENT ,
+    id INT PRIMARY KEY,
     name TEXT NOT NULL,
     address TEXT NOT NULL,
     mobile VARCHAR(11) NOT NULL,
@@ -320,7 +320,7 @@ CREATE TABLE supplier(
 **26.Tạo bảng phiếu nhập**
 ```sql
 CREATE TABLE import_ticket(
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY,
     id_employee INT NOT NULL,
     id_supplier INT NOT NULL,
     import_date DATE NOT NULL,
@@ -334,7 +334,7 @@ CREATE TABLE import_ticket(
 **27.Tạo bảng hàng nhập**
 ```sql
 CREATE TABLE import_goods(
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY,
     name TEXT NOT NULL,
     production_date DATE NOT NULL,
     expiration_date DATE
@@ -369,7 +369,7 @@ CREATE TABLE menu (
 **30.Tạo bảng hóa đơn ăn uống**
 ```sql
 CREATE TABLE bill (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY,
     id_employee INT NOT NULL,
     bill_date DATE NOT NULL,
     discount FLOAT NOT NULL,
@@ -382,7 +382,7 @@ CREATE TABLE bill (
 **31.Tạo bảng chi tiết hóa đơn ăn uống**
 ```sql
 CREATE TABLE detail_bill (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY,
     id_bill INT NOT NULL,
     id_menu INT NOT NULL,
     number_of_menu INT NOT NULL,
