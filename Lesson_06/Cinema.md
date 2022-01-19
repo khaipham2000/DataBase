@@ -294,7 +294,7 @@ CREATE TABLE ticket_bill (
     time_bill TIME NOT NULL,
     id_ticket INT NOT NULL,
     id_ticket_type INT NOT NULL,
-    id_discount INT NOT NULL,
+    id_discount INT,
     FOREIGN KEY (id_ticket) REFERENCES ticket(id),
     FOREIGN KEY (id_ticket_type) REFERENCES ticket_type(id),
     FOREIGN KEY (id_discount) REFERENCES discount(id),
