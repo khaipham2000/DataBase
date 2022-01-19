@@ -10,7 +10,7 @@ CREATE TABLE employee(
     id INT PRIMARY KEY,
     name TEXT NOT NULL,
     date_of_birth DATE NOT NULL,
-    gender ENUM ('Male', 'Female')
+    gender ENUM ('Male', 'Female'),
     address TEXT NOT NULL,
     mobile VARCHAR(11) NOT NULL,
     email TEXT NOT NULL,
@@ -117,7 +117,7 @@ CREATE TABLE customer(
     id INT PRIMARY KEY,
     name TEXT NOT NULL,
     date_of_birth DATE NOT NULL,
-    gender ENUM ('Male', 'Female')
+    gender ENUM ('Male', 'Female'),
     address TEXT NOT NULL,
     mobile VARCHAR(11) NOT NULL,
     email TEXT NOT NULL
@@ -140,7 +140,7 @@ CREATE TABLE producer(
 CREATE TABLE actor(
     id INT PRIMARY KEY,
     first_name TEXT NOT NULL,
-    last_name TEXT NOT NULL,
+    last_name TEXT NOT NULL
 )
 ```
 ***
@@ -149,7 +149,7 @@ CREATE TABLE actor(
 ```sql
 CREATE TABLE category(
     id INT PRIMARY KEY,
-    name TEXT NOT NULL,
+    name TEXT NOT NULL
 )
 ```
 ***
@@ -159,6 +159,7 @@ CREATE TABLE category(
 CREATE TABLE format(
     id INT PRIMARY KEY,
     format TEXT NOT NULL
+)
 ```
 ***
 
@@ -173,7 +174,7 @@ CREATE TABLE film(
     description TEXT NOT NULL,
     length INT NOT NULL,
     rating ENUM('PG','G','PG-13','R','NC-17'),
-    status ENUM('Release','Coming Soon')
+    status ENUM('Release','Coming Soon'),
     FOREIGN KEY (id_producer) REFERENCES producer(id)
 )
 ```
@@ -198,6 +199,7 @@ CREATE TABLE film_format(
     id_format INT NOT NULL,
     FOREIGN KEY (id_format) REFERENCES format(id),
     PRIMARY KEY (id_film, id_format)
+)
 ```
 ***
 
@@ -229,7 +231,7 @@ CREATE TABLE  film_actor(
 ```sql
 CREATE TABLE room(
     id INT PRIMARY KEY,
-    name TEXT NOT NULL,
+    name TEXT NOT NULL
 )
 ```
 ***
@@ -360,7 +362,7 @@ CREATE TABLE detail_import_ticket(
 CREATE TABLE menu (
     id INT PRIMARY KEY,
     name TEXT NOT NULL,
-    type ENUM('Drink','Popcorn','Snacks')
+    type ENUM('Drink','Popcorn','Snacks'),
     price BIGINT NOT NULL
 )
 ```
@@ -386,7 +388,7 @@ CREATE TABLE detail_bill (
     id_bill INT NOT NULL,
     id_menu INT NOT NULL,
     number_of_menu INT NOT NULL,
-    FOREIGN KEY (id_bill) REFERENCES bill(id)
+    FOREIGN KEY (id_bill) REFERENCES bill(id),
     FOREIGN KEY (id_menu) REFERENCES menu(id)
 )
 ```
